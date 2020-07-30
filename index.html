@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 비동기 통신 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- 날짜 표기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/ko.min.js"></script>
+    <!-- 아이콘 표기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/form.css">
+    <link rel="stylesheet" href="./assets/css/list.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="./assets/js/prototypes.js"></script>
+
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/list.js"></script>
+    <script src="./assets/js/form.js"></script>
+
+    <script src="./assets/js/index.js"></script>
+
+    <title>Todo Web Application</title>
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="current">
+                <p class="date">
+                    
+                </p>
+                <div class="details">
+                    <p class="day"></p>
+                    <p class="month">
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="remains">
+                <p><b></b>Tasks</p>
+            </div>
+            <button class="btn-create" id="btn-create" type="button" onclick="_form.ui.switch()">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+        <div class="form">   
+            <div class="form-header">
+                <p>새로운 할 일</p>
+            </div>
+            <div class="form-content">
+                <input type="text" id="new-todo" class="new-todo" />
+                <input type="datetime-local" id="new-date" class="new-date"/>
+            </div>
+            <div class="btns">
+                <button type="button" class="submit" onclick="_form.ui.submit()">추가하기</button>
+            </div>
+        </div>
+        <div class="list">
+            
+        </div>
+    </div>
+</body>
+</html>
