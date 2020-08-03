@@ -4,10 +4,10 @@
 
 ### 목차 
 
-- WEEK 1 : [화면 기획 , 레이아웃 작성해보기, Flexbox](https://github.com/likelion-syu/2020-frontend-basic/blob/master/notes/week1.md)
-- WEEK 2 : [디자인 대로 HTML 제작하기](https://github.com/likelion-syu/2020-frontend-basic/blob/master/notes/week2.md)
-- WEEK 3 : [자바스크립트 기초, 자바스크립트로 UI 만들기](https://github.com/likelion-syu/2020-frontend-basic/blob/master/notes/week3.md) 
-- WEEK 4 : [HTTP, 비동기 통신과 데이터 채워넣기](https://github.com/likelion-syu/2020-frontend-basic/blob/master/notes/week4.md) 
+- WEEK 1 : [화면 기획 , 레이아웃 작성해보기, Flexbox](https://github.com/likelion-syu/2020-frontend-basic/blob/master/sessions/week1/)
+- WEEK 2 : [디자인 대로 HTML 제작하기](https://github.com/likelion-syu/2020-frontend-basic/blob/master/sessions/week2/)
+- WEEK 3 : [자바스크립트 기초, 자바스크립트로 UI 만들기](https://github.com/likelion-syu/2020-frontend-basic/blob/master/sessions/week3/) 
+- WEEK 4 : [HTTP, 비동기 통신과 데이터 채워넣기](https://github.com/likelion-syu/2020-frontend-basic/blob/master/sessions/week4/) 
 
 ### 사용 기술 
 
