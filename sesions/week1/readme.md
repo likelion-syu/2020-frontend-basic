@@ -64,3 +64,5 @@
 
 우리가 필요한 요소들을 요구사항에 포함하여 레이아웃만 완성해보면 다음과 같이 작성해 볼 수 있겠습니다. 
 
+<img src="https://github.com/likelion-syu/2020-frontend-basic/blob/master/sesions/week1/assets/img/img1.png?raw=true" width="450px" alt="레이아웃 예제"></img>
+
