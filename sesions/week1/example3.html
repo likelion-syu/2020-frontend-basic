@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3</title>
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <style>
+        body{ display: flex; }
+        .flex-container{
+            padding : 0 10px;
+            border-radius: 10px;
+            background-color: #191919;
+            width: 500px;
+            height: 100px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            margin:auto;
+        }
+
+        .flex-item{
+            border-radius: 10px;
+            border : 1px solid #fff;
+
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        
+        .flex-item.no-shrink{
+            flex-shrink: 0;
+        }
+        .flex-item.no-grow{
+            flex-grow: 0;
+        }
+
+
+        .flex-item > p { margin: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item ">
+            <p>grow 1 shrink 1</p>
+        </div>
+        <div class="flex-item no-grow">
+            <p>grow 0 shrink 1</p>
+        </div>
+        <div class="flex-item no-grow no-shrink">
+            <p>grow 0 shrink 0</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <style>
+        body{ display: flex; flex-direction: column; align-items:center; }
+        .flex-container{
+            background-color: #191919;
+            width: 600px;
+            height: 50px;
+            margin: auto;
+            border-radius: 5px;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .flex-container.around{ justify-content: space-around; }
+        .flex-container.between{ justify-content: space-between; }
+        .flex-container.evenly{ justify-content: space-evenly; }
+        
+        button{ 
+            background-color: #8c14fc; 
+            border-radius: 5px;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .flex-container > * { 
+            margin: 0; 
+            padding: 5px;
+            height: max-content;
+            width: max-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container around">
+        <button type="button">
+            버튼1
+        </button>
+        <p >
+            내용 
+        </p>
+        <div>
+            <p>2020.07.30</p>
+        </div>
+        <button type="button">
+            X
+        </button>
+    </div>
+
+    <div class="flex-container between">
+        <button type="button">
+            버튼1
+        </button>
+        <p>
+            내용 
+        </p>
+        <div>
+            <p>2020.07.30</p>
+        </div>
+        <button type="button">
+            X
+        </button>
+    </div>
+
+    <div class="flex-container evenly">
+        <button type="button">
+            버튼1
+        </button>
+        <p>
+            내용 
+        </p>
+        <div>
+            <p>2020.07.30</p>
+        </div>
+        <button type="button">
+            X
+        </button>
+    </div>
+</body>
+</html>
