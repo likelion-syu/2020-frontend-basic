@@ -11,18 +11,18 @@ html, body{
     display: flex;
 }
 
-
 .app{
-    width: 480px;
-    height: 800px;
-    display: flex;
+    /* 요소 본인의 가운데 정렬 */
     margin: auto;
 
-    display: flex;
-    flex-direction: column;
-
+    /* 요소를 꾸미기 */
+    width: 480px;
+    height: 800px;
     background-color: #fff;
-
     border-radius: 10px;;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    /* 해당 요소의 자식요소들의 정렬 */
+    display: flex;
+    flex-direction: column;
 }
