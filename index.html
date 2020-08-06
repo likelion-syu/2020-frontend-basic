@@ -32,11 +32,32 @@
     </head>
     <body>
         <div class="app">
-            <!-- 상단 헤더를 제작하기 위함 -->
+            <!-- 상단 헤더 -->
             <div class="header">
-                
+                <!-- 현재 날짜를 노출 -->
+                <div class="current">
+                    <p class="date">
+                        6
+                    </p>
+                    <div class="details">
+                        <p class="day">
+                            Thu
+                        </p>
+                        <p class="month">
+                            August, 2020
+                        </p>
+                    </div>
+                </div>
+                <div class="remains">
+                    <p><b>0</b>Tasks</p>
+                </div>
+
+                <!-- 추가하기 버튼 -->
+            <button class="btn-create" id="btn-create" type="button" onclick="_form.ui.switch(this)">
+                <i class="fas fa-plus"></i>
+            </button>
             </div>
-            <!-- 목록을 제작하기 위함 -->
+            <!-- 목록 -->
             <div class="list">
                 
             </div>

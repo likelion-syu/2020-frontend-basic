@@ -1,0 +1,87 @@
+
+.header{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #dfdfdf;
+    background-color: #e8ecf1;
+    padding: 45px 40px;
+    height: auto;
+    
+    position: relative;
+    
+    /* 요소들을 가로로 정렬하기 */
+    /* 요소들 사이에 간격을 주기  */
+}
+
+.header .current{
+    /* 요소들을 가로 정렬하기 */
+    height: auto;
+}
+
+.header .current .date{
+    color: #595ddd;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4rem;
+    height: 3.3rem;
+    margin-right: .3rem;
+}
+
+.header .current .details{
+    /* 플렉스로 설정하기 */
+    /* 세로로 정렬하기 */
+    /* 요소 주변에 공간을 두기 */
+    /* 요소 좌측정렬하기 */
+}
+
+.header .current .details .day{
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 100;
+    color: #2e3131;
+}
+
+.header .current .details .month{
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 100;
+    color: #2e3131;
+}
+
+.header .remains{
+    /* 요소를 세로로 가운데 정렬하기 */
+}
+
+.header .remains p{
+    color: #6c7a89;
+    font-size: .9rem;
+    line-height: 1rem;
+    font-weight: 100;
+}   
+
+.header .remains p b{
+    font-weight: 900;
+    color: #6c7a89;
+    margin-right: .2rem;
+}
+
+.header .btn-create{
+    width: 54px;
+    height: 54px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 1;
+    
+    transition: .3s ease;
+}
+
+.header .btn-create.active{
+    transition: .3s ease;
+    transform: rotate(45deg);
+}
+
+.header .btn-create:focus {outline:none;}

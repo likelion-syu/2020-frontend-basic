@@ -7,8 +7,13 @@ const _form = {
             
         },
         // 상태 변경하기
-        switch : ()=>{
-            
+        switch : elem => {
+            if(!elem.classList.contains("active")){
+                elem.classList.add("active");
+            }
+            else{
+                elem.classList.remove("active");
+            }
         },
         // 등록하기
         submit : async ()=>{
