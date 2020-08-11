@@ -4,20 +4,32 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-    </head>
-    <body>
+        <link rel="stylesheet" href="./assets/css/common.css" />
         <style>
+            body {
+                display: flex;
+            }
             .item {
-                width: 100px;
-                height: 100px;
-                background-color: red;
+                width: 150px;
+                height: 150px;
+                background-color: #191919;
+                margin: auto;
 
-                /* 요소를 회전 시킵니다 */
-                transform: rotateZ(45deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .item:hover {
+                /* #673ab7; */
             }
         </style>
+    </head>
+    <body>
         <div class="item">
-            <p>Hello World</p>
+            <p>
+                Hello World
+            </p>
         </div>
     </body>
 </html>
