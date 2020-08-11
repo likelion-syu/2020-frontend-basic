@@ -54,3 +54,50 @@
 실습 파일을 수정하며 실제로 수정해보는 것을 추천합니다.
 
 ## 2. CSS animation 다루기
+
+CSS를 이용하면 UI에 필요한 애니메이션도 구현할 수 있습니다. 애니메이션은 보통 특정 시간동안 크기나 색, 회전 등을 일으키는 일이라고 얘기할 수 있겠습니다. CSS animation도 마찬가지 입니다. 특정 CSS 속성에서 일정 시간동안 값을 변경시킵니다. 아래의 예를 봅시다.
+
+```html
+<style>
+    .item {
+        width: 100px;
+        height: 50px;
+
+        background-color: red;
+
+        transition: 0.3s;
+    }
+    .item:hover {
+        background-color: blue;
+    }
+</style>
+<div class="item"><p>item</p></div>
+```
+
+위와 같이 작성하면 `item` 클래스를 가진 요소에 마우스를 올렸을 때, 붉은색에서 파란색으로 배경색이 서서히 변경됩니다. 이 경우에는 `:hover`속성을 이용해 특정 요소의 특정 상황에서(이 경우에는 마우스를 올려놓았을 때) 원래 속성을 다른 값으로 변경되도록 해줍니다. 이 것이 가능하게 해주는 것은 `transition` 속성이 적용되어 있기 때문입니다.
+
+`transition` 속성은 요소의 값이 변경될 때, `transition`이 값으로 가지고 있는 시간동안 서서히 변경되도록 해줍니다. 보통은 `(초)s`단위의 값을 사용합니다.
+
+시간만 값으로 주어질 경우 모든 변경에 대해 일괄적으로 적용됩니다. 만약 특정 요소에 따라 다른 시간을 주고 싶다면, `transition : width 1s background-color 3s`등으로 변경할 수 있습니다.
+
+이 애니메이션 요소들은 모든 CSS 속성들에 대해 대응됩니다. 이런 애니메이션에 조금 더 생동감을 불어넣어주는 것이 `transform`속성입니다.
+
+`transform` 속성은 문자 그대로, 특정 요소를 변형시키는 속성입니다. 말그대로 변형 시키는 css 속성이기 때문에, 요소를 비틀거나 회전시키는 등의 다양한 기능을 할 수 있습니다. 각 기능들은 해당 함수(`skewx`, `rotate`) 등의 함수를 사용해 적용할 수 있습니다.
+
+```html
+<style>
+    .item {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+
+        /* 요소를 회전 시킵니다 */
+        transform: rotateZ(45deg);
+    }
+</style>
+<div class="item">
+    <p>Hello World</p>
+</div>
+```
+
+실제 사용례는 실습 파일에서 확인해봅시다.

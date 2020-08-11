@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./assets/css/common.css" />
+        <style>
+            body {
+                display: flex;
+            }
+            .parent {
+                margin: auto;
+                display: flex;
+                width: 300px;
+                height: 300px;
+                background-color: #191919;
+
+                /* 현재 요소의 position을 relative로 */
+                position: relative;
+            }
+
+            .child {
+                border: 1px solid #fff;
+                padding: 5px;
+                min-width: 100px;
+                height: 20px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                /* position: absolute; */
+            }
+
+            .child p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .child.top-left {
+            }
+            .child.top-right {
+            }
+            .child.bottom-left {
+            }
+            .child.bottom-right {
+            }
+            .child.top-center {
+            }
+            .child.left-center {
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="child top-left">
+                <p>top-left</p>
+            </div>
+            <div class="child top-right">
+                <p>top-right</p>
+            </div>
+
+            <div class="child top-center">
+                <p>top-center</p>
+            </div>
+
+            <div class="child bottom-left">
+                <p>bottom-left</p>
+            </div>
+
+            <div class="child bottom-right">
+                <p>bottom-right</p>
+            </div>
+
+            <div class="child bottom-right">
+                <p>left-center</p>
+            </div>
+        </div>
+    </body>
+</html>
