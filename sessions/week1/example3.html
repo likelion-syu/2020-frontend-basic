@@ -20,7 +20,6 @@
                 margin: auto;
 
                 position: relative;
-
                 flex-wrap: wrap;
 
                 /* flex-container의 자식 요소들을 가운데 정렬하기 */
@@ -43,7 +42,6 @@
                 top: -30px;
                 text-align: right;
             }
-
             .flex-container::after {
                 border-bottom: 1px dashed #fff;
                 width: 100%;
@@ -53,21 +51,18 @@
                 text-align: left;
                 transform: rotateZ(-90deg);
             }
-
             .flex-container.row::before {
                 content: "main axis ->";
             }
             .flex-container.row::after {
                 content: "<- cross axis";
             }
-
             .flex-container.column::before {
                 content: "cross axis ->";
             }
             .flex-container.column::after {
                 content: "<- main axis";
             }
-
             .flex-container .flex-item {
                 display: flex;
                 justify-content: center;
@@ -137,6 +132,7 @@
             <div class="flex-item">
                 <p>flex-item 4</p>
             </div>
+
             <div class="flex-item">
                 <p>flex-item 5</p>
             </div>
