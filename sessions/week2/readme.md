@@ -10,7 +10,7 @@
 
 지난 주에 우리는 자식 요소에 대해서 일괄적으로 정렬하도록 했습니다. 보통은 예외를 두지 않고 일괄적으로 정렬시키지만, UI에 따라 규칙을 벗어난 요소를 만들어야 할 경우가 있습니다. 아래의 이미지를 봅시다.
 
-![프론트엔드 완성 예제](https://github.com/likelion-syu/2020-frontend-basic/blob/master/sessions/week2/assets/img/img2.png?raw=true)
+![프론트엔드 완성 예제](https://raw.githubusercontent.com/likelion-syu/2020-frontend-basic/master/sessions/week2/assets/img/img1.png?raw=true)
 
 위 이미지에서 붉은 버튼은 일반적인 정렬과 조금 다릅니다. 보통 `div`로 나누어진 경우 버튼이 각 영역 안에 배치되어야 하나, 이미지에 보면 다른 영역의 경계선에 위치하고 있는 것을 알 수 있습니다. 이런 UI의 경우 `position`을 이용해
 적용할 수 있습니다.
