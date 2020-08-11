@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example 1</title>
-    <link rel="stylesheet" href="./assets/css/common.css">
-    <style>
-        body{
-            /* flex-container의 부모에게 flex 박스 적용 */
-            display: flex;
-        }
-        
-        .flex-container{
-            width: 500px;
-            height: 500px;
-            background-color: #67809f;
-            
-            /* flex-container 본인을 가운데 정렬하기  */
-            
-            /* flex-container의 자식 요소들을 가운데 정렬하기 */
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Example 1</title>
+        <link rel="stylesheet" href="./assets/css/common.css" />
+        <style>
+            body {
+                /* flex-container의 부모에게 flex 박스 적용 */
+                display: flex;
+            }
 
-        .flex-container p{
-            margin: 0;
-            font-size: 3rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-         <p>Hello flexbox!</p>
-    </div>
-</body>
+            .flex-container {
+                width: 500px;
+                height: 500px;
+                background-color: #67809f;
+
+                /* flex-container 본인을 가운데 정렬하기  */
+                margin: auto;
+                /* flex-container의 자식 요소들을 가운데 정렬하기 */
+                display: flex;
+            }
+
+            .flex-container p {
+                margin: 0;
+                font-size: 3rem;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <p>Hello flexbox!</p>
+        </div>
+    </body>
 </html>

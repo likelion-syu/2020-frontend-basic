@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Example 1</title>
+        <link rel="stylesheet" href="./assets/css/common.css" />
+        <style>
+            body {
+                /* flex-container의 부모에게 flex 박스 적용 */
+                display: flex;
+            }
+
+            .flex-container {
+                min-width: 500px;
+                max-width: 500px;
+                min-height: 500px;
+                max-height: 500px;
+                background-color: #191919;
+                margin: auto;
+
+                position: relative;
+
+                flex-wrap: wrap;
+
+                /* flex-container의 자식 요소들을 가운데 정렬하기 */
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .flex-container.row {
+                flex-direction: row;
+            }
+            .flex-container.column {
+                flex-direction: column;
+            }
+
+            .flex-container::before {
+                border-bottom: 1px dashed #fff;
+                width: 100%;
+                position: absolute;
+                top: -30px;
+                text-align: right;
+            }
+
+            .flex-container::after {
+                border-bottom: 1px dashed #fff;
+                width: 100%;
+                position: absolute;
+                bottom: 240px;
+                left: -270px;
+                text-align: left;
+                transform: rotateZ(-90deg);
+            }
+
+            .flex-container.row::before {
+                content: "main axis ->";
+            }
+            .flex-container.row::after {
+                content: "<- cross axis";
+            }
+
+            .flex-container.column::before {
+                content: "cross axis ->";
+            }
+            .flex-container.column::after {
+                content: "<- main axis";
+            }
+
+            .flex-container .flex-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+                width: 80px;
+                height: 80px;
+                border: 1px solid #fff;
+                border-radius: 5px;
+            }
+            .flex-item p {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container row">
+            <div class="flex-item">
+                <p>flex-item 1</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 2</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 3</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 4</p>
+            </div>
+
+            <div class="flex-item">
+                <p>flex-item 5</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 6</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 7</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 8</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 9</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 10</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 11</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 12</p>
+            </div>
+        </div>
+
+        <div class="flex-container column">
+            <div class="flex-item">
+                <p>flex-item 1</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 2</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 3</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 4</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 5</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 6</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 7</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 8</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 9</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 10</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 11</p>
+            </div>
+            <div class="flex-item">
+                <p>flex-item 12</p>
+            </div>
+        </div>
+    </body>
+</html>

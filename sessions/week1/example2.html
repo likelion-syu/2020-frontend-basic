@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example 2</title>
-    <link rel="stylesheet" href="./assets/css/common.css">
-    <style>
-        body{ display: flex; }
-        
-        .flex-container{
-            background-color: #191919;
-            width: 600px;
-            height: 50px;
-            margin: auto;
-            border-radius: 5px;
-            padding: 10px;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Example 2</title>
+        <link rel="stylesheet" href="./assets/css/common.css" />
+        <style>
+            body {
+                display: flex;
+            }
 
-            /* 
-                - 요소들을 '가로'로 나열
-                - 요소를 세로로 '가운데' 정렬
-                - 요소들 '주변에' '간격' 주기
-            */
-        }
-        
-        button{ 
-            background-color: #8c14fc; 
-            border-radius: 5px;
-            border: 0;
-            color: #fff;
-            cursor: pointer;
-        }
+            .flex-container {
+                background-color: #191919;
+                width: 600px;
+                height: 50px;
+                margin: auto;
+                border-radius: 5px;
+                padding: 10px;
 
-        .flex-container > * { 
-            margin: 0; 
-            padding: 5px;
-            height: max-content;
-            width: max-content;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <button type="button">
-            버튼1
-        </button>
-        <p >
-            내용 
-        </p>
-        <div>
-            <p>2020.07.30</p>
+                /* 
+                    - 요소들을 '가로'로 나열
+                    - 요소를 세로로 '가운데' 정렬
+                    - 요소들 '사이에' '간격' 주기
+                */
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            button {
+                background-color: #8c14fc;
+                border-radius: 5px;
+                border: 0;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .flex-container > * {
+                margin: 0;
+                padding: 5px;
+                height: max-content;
+                width: max-content;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <button type="button">
+                버튼1
+            </button>
+            <p>
+                내용
+            </p>
+            <div>
+                <p>2020.07.30</p>
+            </div>
+            <button type="button">
+                X
+            </button>
         </div>
-        <button type="button">
-            X
-        </button>
-    </div>
-</body>
+    </body>
 </html>
