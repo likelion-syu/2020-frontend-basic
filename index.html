@@ -61,8 +61,60 @@
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
+            <!-- FORM -->
+            <!-- <div class="form">
+                <div class="form-header">
+                    <p>새로운 할 일</p>
+                </div>
+                <div class="form-content">
+                    <input type="text" id="new-todo" class="new-todo" />
+                    <input
+                        type="datetime-local"
+                        id="new-date"
+                        class="new-date"
+                    />
+                </div>
+                <div class="btns">
+                    <button
+                        type="button"
+                        class="submit"
+                        onclick="_form.ui.submit()"
+                    >
+                        추가하기
+                    </button>
+                </div>
+            </div> -->
             <!-- 목록 -->
-            <div class="list"></div>
+            <div class="list">
+                <div class="list-item">
+                    <div class="checkbox">
+                        <button
+                            type="button"
+                            class="chk"
+                            onclick="_list.item.ui.change(this)"
+                        >
+                            <i class="far fa-circle"></i>
+                            <i class="far fa-check-circle"></i>
+                        </button>
+                    </div>
+                    <div class="content">
+                        <p>
+                            이거슨 새로운 할 일 입니더 아무거나 채워놔 봅니다
+                        </p>
+                    </div>
+                    <div class="remain-date">
+                        <p class="remain">7시간 전</p>
+                        <p class="date">09.22 13:00</p>
+                    </div>
+                    <button
+                        type="button"
+                        class="btn-delete"
+                        onclick="_list.item.ui.del(this)"
+                    >
+                        <i class="far fa-times-circle"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
