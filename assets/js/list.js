@@ -21,9 +21,7 @@ const _list = {
         del: async (id) => {},
         ui: {
             // 할 일 상태 바꾸기
-            change: async (elem) => {
-                
-            },
+            change: async (elem) => {},
             // 삭제 하기
             del: async (elem) => {},
         },
