@@ -1,0 +1,66 @@
+.list {
+}
+
+.list .list-item {
+}
+
+.list .list-item p {
+}
+
+.list .list-item .checkbox .chk {
+}
+
+.list .list-item .checkbox .chk:focus {
+}
+
+.list .list-item .checkbox .chk .fa-circle {
+}
+.list .list-item .checkbox .chk .fa-check-circle {
+}
+
+.list .list-item .content {
+}
+
+.list .list-item .content p {
+    word-break: break-all;
+    text-align: left;
+}
+
+.list .list-item .remain-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.list .list-item .remain-date .remain {
+}
+
+.list .list-item .remain-date .date {
+}
+
+.list .list-item .btn-delete {
+}
+
+.list .list-item .btn-delete:focus {
+    outline: none;
+}
+
+/* expired */
+.list .list-item.expired:not(.active) .content p {
+}
+
+.list .list-item.expired:not(.active) .remain-date p {
+}
+
+/* active 상태 */
+
+.list .list-item.active .checkbox .chk {
+}
+
+.list .list-item.active .content p {
+}
+
+.list .list-item.active .checkbox .chk .fa-circle {
+}
+.list .list-item.active .checkbox .chk .fa-check-circle {
+}

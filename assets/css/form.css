@@ -1,0 +1,28 @@
+.form {
+}
+
+.form.active {
+}
+
+.form .form-header {
+}
+
+.form .form-header p {
+}
+
+.form .form-content {
+}
+
+.form .form-content .new-todo {
+}
+.form .form-content .new-todo:focus {
+    /* outline: none; */
+}
+
+.form .btns {
+}
+.form .btns .submit {
+}
+
+.form .btns .submit:focus {
+}
