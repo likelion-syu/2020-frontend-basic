@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./assets/css/common.css" />
+        <style>
+            body {
+                display: flex;
+            }
+            .container {
+                margin: auto;
+                display: flex;
+                width: 300px;
+                height: 300px;
+                background-color: #191919;
+
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .container .form {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container .form #inputContent {
+                flex-grow: 1;
+                margin: 10px 0px 10px 10px;
+                background-color: rgba(0, 0, 0, 0);
+                border: 0;
+                border-bottom: 1px solid #ffeb3b;
+                color: #ffeb3b;
+            }
+
+            .container .form #inputContent:focus {
+                outline: none;
+            }
+
+            .container .form .btn {
+                margin-right: 10px;
+                border: 0;
+                background: rgba(0, 0, 0, 0);
+                color: #ffeb3b;
+                font-weight: 100;
+                cursor: pointer;
+            }
+            .container .form .btn:focus {
+                outline: none;
+            }
+
+            .container .items {
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+                margin: 10px 0px;
+            }
+
+            .container .items .item {
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: 0.5s slide-up ease;
+            }
+
+            .container .items .item .btn.remove {
+                color: #fff;
+                border: 1px solid #fff;
+                background: none;
+                cursor: pointer;
+            }
+            .container .items .item .btn.remove:focus {
+                outline: none;
+            }
+            .container .items .item .content {
+                flex-grow: 1;
+                margin: 0 10px;
+            }
+
+            .container .items .item.will-remove {
+                animation: 0.5s slide-up-remove ease;
+            }
+
+            @keyframes slide-up {
+                from {
+                    opacity: 0;
+                    transform: translateY(5px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slide-up-remove {
+                from {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                to {
+                    opacity: 0;
+                    transform: translateY(-5px);
+                    display: none;
+                }
+            }
+        </style>
+        <script type="text/javascript">
+            function insert() {
+                // 내용이 작성된 요소 찾기
+                const inputElem = document.querySelector("#inputContent");
+                // 내용가져오기
+                const text = inputElem.value;
+                // 내용이 비어있지 않은 경우
+                if (text.trim().length > 0) {
+                    // div만들기
+                    const item = document.createElement("div");
+                    // 클래스 추가
+                    item.classList.add("item");
+
+                    // p 태그 만들기
+                    const content = document.createElement("p");
+                    content.classList.add("content");
+                    content.innerText = text;
+
+                    // 버튼 만들기
+                    const button = document.createElement("button");
+                    button.classList.add("remove");
+                    button.classList.add("btn");
+                    button.innerText = "삭제";
+                    button.onclick = () => del(item);
+
+                    // 요소 추가하기
+                    item.appendChild(content);
+                    item.appendChild(button);
+
+                    // 실제 div에 삽입하기
+                    document.querySelector(".items").appendChild(item);
+                    // input 내용 지우기
+                    inputElem.value = "";
+                }
+            }
+
+            function del(item) {
+                // 해당 요소에 클래스를 추가
+                item.classList.add("will-remove");
+                // 애니메이션이 종료된 시간에 삭제 처리
+                setInterval(() => {
+                    item.remove();
+                }, 500);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form">
+                <input type="text" id="inputContent" />
+                <button class="btn" onclick="insert()">
+                    클릭
+                </button>
+            </div>
+            <div class="items">
+                <!-- <div class="item">
+                    <p class="content">hello</p>
+                    <button class="remove btn" onclick="del(this)">삭제</button>
+                </div> -->
+            </div>
+        </div>
+    </body>
+</html>

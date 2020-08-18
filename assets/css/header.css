@@ -87,16 +87,16 @@
     font-size: 1.1rem;
     cursor: pointer;
     z-index: 1;
+    position: absolute;
+    bottom: -27px;
+    right: 50px;
 
     transition: 0.3s ease;
-    position: absolute;
-    bottom: 55px;
-    right: -70px;
 }
 
 .header .btn-create.active {
     transition: 0.3s ease;
-    transform: rotate(45deg);
+    transform: rotateZ(45deg);
 }
 
 .header .btn-create:focus {

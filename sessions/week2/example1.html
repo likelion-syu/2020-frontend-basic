@@ -12,8 +12,8 @@
             .parent {
                 margin: auto;
                 display: flex;
-                width: 300px;
-                height: 300px;
+                width: 400px;
+                height: 400px;
                 background-color: #191919;
 
                 /* 현재 요소의 position을 relative로 */
@@ -28,7 +28,7 @@
                 display: flex;
                 justify-content: center;
                 align-content: center;
-                /* position: absolute; */
+                position: absolute;
             }
 
             .child p {
@@ -37,16 +37,36 @@
             }
 
             .child.top-left {
+                top: 0;
+                left: 0;
             }
             .child.top-right {
+                top: 0;
+                right: 0;
             }
             .child.bottom-left {
+                bottom: 0;
+                left: 0;
             }
             .child.bottom-right {
+                bottom: 0;
+                right: 0;
             }
             .child.top-center {
+                top: 0;
+                left: 50%;
+                margin-left: -50px;
             }
             .child.left-center {
+                left: 0;
+                top: 50%;
+                margin-top: -10px;
+            }
+            .child.center {
+                top: 50%;
+                margin-top: -10px;
+                left: 50%;
+                margin-left: -50px;
             }
         </style>
     </head>
@@ -71,8 +91,12 @@
                 <p>bottom-right</p>
             </div>
 
-            <div class="child bottom-right">
+            <div class="child left-center">
                 <p>left-center</p>
+            </div>
+
+            <div class="child center">
+                <p>center</p>
             </div>
         </div>
     </body>
