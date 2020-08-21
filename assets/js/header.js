@@ -1,18 +1,20 @@
-// HEADER에 연관된 함수들 
+// HEADER에 연관된 함수들
 const _header = {
-    // UI 조작에 관련된 함수들 
-    ui : {
-        // 남은 할일 표기
-        getRemains : data => {
-            
+    ui: {
+        getRemains: function (data) {},
+        setDate: () => {
+            const now = moment();
+            const header = document.querySelector(".header .current");
+            header.querySelector(".date").innerText = now.date();
+            header.querySelector(".day").innerText = now
+                .locale("en")
+                .format("ddd");
+            header.querySelector(".month").innerText = now
+                .locale("en")
+                .format("MMMM, yyyy");
         },
-        // 현재 날짜 표기
-        setDate : ()=>{
-            
-        }
     },
-    // 일반 함수들
-    init : data =>{
-        
-    }
-}
+    init: function (data) {
+        _header.ui.setDate();
+    },
+};
