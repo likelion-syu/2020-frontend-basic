@@ -159,3 +159,78 @@ obj.sum(obj.num_1, obj.num_2);
 
 ### 2.3. Promise 객체
 
+위에서 코드 상에서도 비동기 형태로 요청이 된다고 이야기했습니다. 이는 코드를 실행하는 부분에서도 드러납니다. 아래의 코드를 봅시다
+
+```javascript
+// 1초 뒤에 입력받은 메시지를 console에 출력합니다
+const willExecute1SecondAfter = (msg) =>
+    setTimeout(() => console.log(msg), 1000);
+
+console.log("1");
+willExecute1SecondAfter("2");
+console.log("3");
+```
+
+위의 코드를 실행하면 1,2,3 순으로 출력되는 것이 아니라 1,3,2 순으로 출력됩니다. `willExecute1SecondAfter`함수를 실행한 결과는 1초 뒤에 실행되기 때문입니다. 이런 경우를 비동기적으로 실행된다고 합니다. 보통의 경우는 함수를 실행하면 함수의 실행 결과가 바로 반환되지만, 위 경우에는 함수의 실행은 바로 수행되지만 그 결과는 1초 뒤에 반환됩니다. 이런 경우에 수행결과를 다시 재사용해야된다면 다양한 방법으로 처리할 수 있습니다. 이 경우 이전에는 `callback`이라는 형식으로 수행했습니다. 이 경우는 다음과 같습니다.
+
+```javascript
+const willExecute1SecondAfter = (name, callback) =>
+    setTimeout(() => {
+        const sentence = `hello, ${name}!`;
+        callback(sentence);
+    }, 1000);
+
+willExecute1SecondAfter("Yoo", (sentence) => {
+    console.log(sentence);
+});
+
+// Hello, Yoo!
+```
+
+위 코드에서는 `willExecute1SecondAfter`라는 함수에게 `Yoo`라는 문자열과 익명함수를 매개변수로 넘겨줍니다. 넘겨준 문자열은 함수 내부에서 `hello, ${name}!`형태로 합쳐지게 됩니다. 이 합쳐진 결과물은 1초 뒤에 재사용할 수 있게되는데, 결과물을 재사용하는 것은 `callback`이라는 이름으로 넘겨준 익명함수에게 넘겨주게 됩니다. 익명함수의 매개변수로서 주어지는 형태인 셈 입니다. 이 방식을 `callback`이라고 합니다.
+
+근데 이 경우 `callback`이 중첩되는 경우가 생길 수 있습니다. 심한 경우 아래와 같은 형태도 발생할 수 있습니다
+
+```javascript
+fn(fn2(fn3(fn4(fn5()))));
+```
+
+위의 경우가 `callback`이 과도하게 중첩된 경우 입니다. 이럴 경우 코드의 가독성이 굉장히 떨어지게 됩니다. 이런 비동기 처리를 일괄적으로 할 수 있도록 도와주는 것이 `Promise`객체입니다. `Promise` 객체는 함수의 실행결과로 대기 상태의 `Promise`객체를 반환합니다. 이 객체는 내부의 처리 결과에 따라서 `resolve`상태와 `reject`상태를 갖게 됩니다. 실행 결과는 보통 이렇습니다.
+
+```javascript
+const _prm = promisedFunc();
+
+_prm.then(() => {
+    // 함수 실행 내용이 성공한 경우
+}).catch(() => {
+    // 함수 실행이 성공한 경우
+});
+```
+
+위에서는 `promisedFunc`라는 비동기 함수를 실행하면, `Promise`객체를 반환해 `_prm` 변수에 저장합니다. 이 객체에 `then`이라는 함수를 실행하고 익명 함수를 넘겨주면, 해당 함수가 성공 시 해당 익명함수가 실행됩니다. `catch`함수를 연달아 실행하고 익명함수를 넘겨주면, 오류 내용을 매개변수에 담아서 넘겨준 익명함수를 실행합니다.
+
+내용만 봤을때는 `callback`함수와 다를바 없어보입니다. 하지만 여러가지 요청을 한번에 처리할 때 이 방식의 장점을 엿볼 수 있습니다.
+
+```javascript
+promisedFunc()
+    .then(promisedFunc2)
+    .then(promisedFunc3)
+    .then(() => {
+        // 위의 모든 것이 순차적으로 성공한 경우 수행
+    })
+    .catch(() => {
+        // 함수 중 하나라도 에러가 나는 경우 수행
+    });
+
+Promise.all([promisedFunc, promisedFunc2, promisedFunc3])
+    .then(() => {
+        // 위와 같은 결과
+    })
+    .catch(() => {
+        // 함수 중 하나라도 에러가 나는 경우 수행
+    });
+```
+
+예제 코드에 두 가지 경우가 있습니다. 첫번째 경우는 첫번째 비동기 함수가 실행된 후 `promisedFunc2`와 `promisedFunc3`가 순차적으로 실행되게 하고 최종적으로 마지막에 주어진 익명함수를 실행하게 합니다. 이 경우 하나라도 에러가 나면 마지막 부분이 실행되지 않습니다. 이렇듯 비동기 함수의 실행 순서를 명확하게 표현해 줄 수 있습니다. 이런 용법은 `Promise` 객체 자체를 사용해서도 수행할 수 있는데, 그 용법이 아래의 방법입니다. 이렇듯 `Promise`를 사용하면 여러가지의 비동기 함수들의 호출 순서와 실행 결과를 좀 더 명확하게 다룰 수 있게 됩니다. 저희의 실습 예제에서도 본 방법을 사용할 것 입니다.
+
+실제 실습으로 들어가봅시다!
