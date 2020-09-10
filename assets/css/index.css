@@ -1,17 +1,20 @@
 /* 페이지 전반에 걸쳐 영향을 미칠 CSS */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
 
-* { font-family: 'Noto Sans KR', sans-serif; }
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
 
-html, body{
+html,
+body {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     background-color: #ecf0f1;
     display: flex;
 }
 
-.app{
+.app {
     /* 요소 본인의 가운데 정렬 */
     margin: auto;
 
@@ -19,8 +22,8 @@ html, body{
     width: 480px;
     height: 800px;
     background-color: #fff;
-    border-radius: 10px;;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
     /* 해당 요소의 자식요소들의 정렬 */
     display: flex;

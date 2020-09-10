@@ -2,6 +2,9 @@
 
 멋쟁이 사자처럼 2020 프론트엔드 기초 세션입니다. 실습을 통해서 실제 프론트엔드 작업에 필요한 항목들을 직접 구현해보며 진행합니다.
 
+- closed 브랜치에서 완성본을 확인할 수 있습니다
+- learning 브랜치에서 비어있는 내용을 받아볼 수 있습니다
+
 ### 목차 
 
 - WEEK 1 : [화면 기획 , 레이아웃 작성해보기, Flexbox](https://github.com/likelion-syu/2020-frontend-basic/blob/master/sessions/week1/)
