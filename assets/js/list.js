@@ -70,14 +70,48 @@ const _list = {
             return template;
         },
         // 할 일 상태 바꾸기 요청하기
-        change: async (id) => {},
+        change: async (id) => {
+            const currentData = _list.data.find(
+                (item) => item.id === Number(id)
+            );
+            await axios({
+                method: "patch",
+                url: `${__HOST}${id}/`,
+                data: {
+                    done: !currentData.done,
+                },
+            });
+        },
         // 할 일 삭제 요청하기
-        del: async (id) => {},
+        del: async (id) => {
+            await axios({
+                method: "delete",
+                url: `${__HOST}${id}/`,
+            });
+        },
         ui: {
             // 할 일 상태 바꾸기
-            change: async (elem) => {},
+            change: async (elem) => {
+                const parent = elem.parentElement.parentElement;
+                const todoId = parent.getAttribute("data-todo-id");
+                await _list.item.change(todoId);
+
+                await _list.create();
+                _header.init(_list.data);
+            },
             // 삭제 하기
-            del: async (elem) => {},
+            del: async (elem) => {
+                if (confirm("삭제하시겠습니까?")) {
+                    const parent = elem.parentElement;
+                    const todoId = parent.getAttribute("data-todo-id");
+                    await _list.item.del(todoId);
+
+                    parent.remove();
+
+                    await _list.create();
+                    _header.init(_list.data);
+                }
+            },
         },
     },
     // 템플릿 관련 항목들

@@ -6,5 +6,5 @@ window.document.addEventListener("DOMContentLoaded", async () => {
         "font-weight:900;color:#595ddd;font-size:30px"
     );
     await _list.init(__HOST);
-    _header.init();
+    _header.init(_list.data);
 });

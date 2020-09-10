@@ -4,9 +4,9 @@
     width: auto;
     margin-top: 27px;
     margin-bottom: 20px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     overflow-y: auto;
 }
 
